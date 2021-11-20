@@ -17,7 +17,7 @@ def page(x):
     r = s.get(url, headers=header)
     r.html.render(sleep=5, timeout=30)
     cont = r.html.find('.yuRUbf')
-    with alive_bar(len(cont), title=f'Getting page {x}', bar='classic2', spinner='classic') as bar:
+    with alive_bar(len(cont), title=f'Getting page: {x}', bar='classic2', spinner='classic') as bar:
         for item in cont:
             try:
                 title = item.find('h3', first=True).text
